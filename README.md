@@ -42,6 +42,10 @@ or load the bundle file directly at the end of your HTML document.
 
 3. Add a `data-tiny-editor` attribute to the HTML element you want to transform into an editor
 
+## How to dynamically create an editor
+
+Use the exported function `window.__tinyEditor.transformToEditor()` which take as the first argument the DOM element (usually a `<div>`) that you want to transform to an editor. Refer to the `/public/index.html` for an example.
+
 
 ### optional js dynamic initialization
 ```js
@@ -50,8 +54,8 @@ let div = document.createElement('div');
 div.setAttribute('data-tiny-editor', '');//probably not needed
 document.body.appendChild(div);
 transformToEditor(div);
-
 ```
+
 ## How to extract the formatted text
 
 Listen for the `input` event on the editor HTML element.
@@ -63,7 +67,6 @@ document
     editor.addEventListener('input', e => console.log(e.target.innerHTML)
   )
 );
-
 ```
 
 ## How to customize
